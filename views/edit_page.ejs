@@ -1,0 +1,31 @@
+<!-- edit_page.ejs -->
+<header>
+    <center><h1>Edit Student Result</h1></center>
+</header>
+
+<main>
+    <form method="post" action="/update/<%= result.Id %>">
+        <!-- Populate the form fields with existing values -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= result.Name %>" required>
+
+        <label for="english">English:</label>
+        <input type="text" id="english" name="english" value="<%= result.English %>" required>
+
+        <label for="maths">Maths:</label>
+        <input type="text" id="maths" name="maths" value="<%= result.Maths %>" required>
+
+        <label for="account">Account:</label>
+        <input type="text" id="account" name="account" value="<%= result.Account %>" required>
+
+        <label for="economics">Economics:</label>
+        <input type="text" id="economics" name="economics" value="<%= result.Economics %>" required>
+
+        <label for="logicalQuents">Logical Quents:</label>
+        <input type="text" id="logicalQuents" name="logicalQuents" value="<%= result.LogicalQuents %>" required>
+
+        <!-- Repeat similar lines for other form fields -->
+
+        <input type="submit" value="Submit">
+    </form>
+</main>

@@ -1,0 +1,81 @@
+<style>
+    a{
+        text-decoration: none;
+        color: purple;
+    }
+</style>
+<header>
+  <center><h1>Add Student Result</h1></center>
+</header>
+
+<main>
+  <form method="post" action="/ejs">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="english">English:</label>
+    <input type="text" id="english" name="english" required />
+
+    <label for="maths">Maths:</label>
+    <input type="text" id="maths" name="maths" required />
+
+    <label for="account">Account:</label>
+    <input type="text" id="account" name="account" required />
+
+    <label for="economics">Economics:</label>
+    <input type="text" id="economics" name="economics" required />
+
+    <label for="logicalQuents">Logical Quents:</label>
+    <input type="text" id="logicalQuents" name="logicalQuents" required />
+
+    <input type="submit" value="Submit" />
+  </form>
+
+  <br />
+  <br />
+
+  <table border="1" cellpadding="10px" align="center">
+    <thead>
+        <tr>
+            <th onclick="" colspan="2"><a href="/ejs/top5"> View Top 5</a></th>
+            <th onclick="" colspan="2"><a href="/ejs/top10"> View Top 10</a></th>
+            <th onclick="" colspan="2"><a href="/ejs"> View All</a></th>
+            <th onclick="" colspan="2"><a href="/ejs/pass"> View Pass</a></th>
+            <th onclick="" colspan="2"><a href="/ejs/fail"> View Fail</a></th>
+            <th onclick="" colspan="2"><a href="/ejs"> View </a></th>
+        </tr>
+      <tr>
+        <th>No.</th>
+        <th>Name.</th>
+        <th>English</th>
+        <th>Maths</th>
+        <th>Account</th>
+        <th>Economics</th>
+        <th>Logical Quents</th>
+        <th>Total</th>
+        <th>Parcentage</th>
+        <th>Pass/Fail</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% result.forEach(function(result, index) { %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= result.Name %></td>
+        <td><%= result.English %></td>
+        <td><%= result.Maths %></td>
+        <td><%= result.Account %></td>
+        <td><%= result.Economics %></td>
+        <td><%= result.LogicalQuents %></td>
+        <td><%= result.Total %></td>
+        <td><%= result.Parcentage %></td>
+        <td><%= result.PassFail %></td>
+        <td><a href="/edit/<%= result.Id %>">Edit</a></td>
+        <td><a href="/delete/<%= result.Id %>">Delete</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</main>
